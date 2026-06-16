@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ExternalLink, Cpu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
+//ii0ii ijoi oijoin 
 const projects = [
   {
     title: "LMS Platform",
