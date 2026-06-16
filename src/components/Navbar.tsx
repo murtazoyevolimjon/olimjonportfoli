@@ -36,8 +36,8 @@ export const Navbar = () => {
       <nav className="fixed top-0 z-50 w-full py-4 transition-all duration-300 bg-transparent">
         <div className="container mx-auto px-6 md:px-12">
           <div className="flex items-center justify-between">
-            <div className="text-2xl font-bold tracking-tighter">
-              <span className="text-gradient">OM.</span>
+            <div className="text-base font-bold tracking-tighter">
+              <span className="text-gradient">OLIMJON MURTAZOYEV</span>
             </div>
           </div>
         </div>
@@ -54,8 +54,8 @@ export const Navbar = () => {
     >
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold tracking-tighter">
-            <span className="text-gradient">OM.</span>
+          <Link href="/" className="text-base font-bold tracking-tighter">
+            <span className="text-gradient">OLIMJON MURTAZOYEV</span>
           </Link>
 
           {/* Desktop Nav */}

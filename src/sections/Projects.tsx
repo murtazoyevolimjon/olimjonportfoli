@@ -3,26 +3,26 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
 import { ExternalLink, Cpu } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
     title: "LMS Platform",
     description: "Online education platform with course management and student progress tracking.",
-    image: "https://images.unsplash.com/photo-1501504905953-f8c97f2d819b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
     tech: ["Node.js", "React.js", "PostgreSQL", "Prisma ORM"],
     demo: "#",
-    github: "https://github.com/murtazoyevolimjon",
+    github: "https://github.com/murtazoyevolimjon/LMS",
   },
   {
     title: "Educational CRM System",
     description: "CRM platform for managing students, payments, attendance, and courses.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     tech: ["Express.js", "PostgreSQL", "Knex.js", "JWT"],
-    demo: "#",
-    github: "https://github.com/murtazoyevolimjon",
+    demo: "https://crm-frontend-beta-inky.vercel.app/login",
+    github: "https://github.com/murtazoyevolimjon/crm-frontend.git",
   },
 ];
 
@@ -46,7 +46,7 @@ export const Projects = () => {
               whileHover={{ y: -5 }}
               className="group"
             >
-              <Card glass className="overflow-hidden border-primary/10 transition-all group-hover:border-primary/30 group-hover:shadow-2xl group-hover:shadow-primary/5">
+              <Card glass className="overflow-hidden border-primary/10 transition-all group-hover:border-primary/30 group-hover:shadow-2xl group-hover:shadow-primary/5 h-full flex flex-col">
                 <div className="relative h-64 overflow-hidden">
                   <Image
                     src={project.image}
@@ -61,7 +61,7 @@ export const Projects = () => {
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((t) => (
                       <span key={t} className="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">
@@ -70,15 +70,27 @@ export const Projects = () => {
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="gap-4">
-                  <Button variant="outline" size="sm" className="w-full" onClick={() => window.open(project.demo, "_blank")}>
-                    <ExternalLink size={16} className="mr-2" />
-                    Live Demo
-                  </Button>
-                  <Button variant="outline" size="sm" className="w-full" onClick={() => window.open(project.github, "_blank")}>
+                <CardFooter className="gap-4 mt-auto">
+                  {project.demo !== "#" && (
+                    <Link
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-9 w-full items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      <ExternalLink size={16} className="mr-2" />
+                      Live Demo
+                    </Link>
+                  )}
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-9 w-full items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  >
                     <Cpu size={16} className="mr-2" />
                     Code
-                  </Button>
+                  </Link>
                 </CardFooter>
               </Card>
             </motion.div>
@@ -88,3 +100,4 @@ export const Projects = () => {
     </section>
   );
 };
+
