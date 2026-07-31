@@ -9,12 +9,12 @@ import Link from "next/link";
 //ii0ii ijoi oijoin 
 const projects = [
   {
-    title: "LMS Platform",
-    description: "Online education platform with course management and student progress tracking.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
-    tech: ["Node.js", "React.js", "PostgreSQL", "Prisma ORM"],
-    demo: "#",
-    github: "https://github.com/murtazoyevolimjon/LMS",
+    title: "StudyNext Platform",
+    description: "Educational portal for searching Uzbek universities, fields of study, and score requirements.",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
+    demo: "https://study-next-smoky-six.vercel.app/",
+    github: "#",
   },
   {
     title: "Educational CRM System",
@@ -23,6 +23,14 @@ const projects = [
     tech: ["Express.js", "PostgreSQL", "Knex.js", "JWT"],
     demo: "https://crm-frontend-beta-inky.vercel.app/login",
     github: "https://github.com/murtazoyevolimjon/crm-frontend.git",
+  },
+  {
+    title: "LMS Platform",
+    description: "Online education platform with course management and student progress tracking.",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    tech: ["Node.js", "React.js", "PostgreSQL", "Prisma ORM"],
+    demo: "#",
+    github: "https://github.com/murtazoyevolimjon/LMS",
   },
 ];
 
@@ -35,7 +43,7 @@ export const Projects = () => {
           subtitle="A showcase of my recent work in building complex systems and user-friendly interfaces."
         />
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
@@ -52,7 +60,7 @@ export const Projects = () => {
                     src={project.image}
                     alt={project.title}
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
@@ -71,7 +79,7 @@ export const Projects = () => {
                   </div>
                 </CardContent>
                 <CardFooter className="gap-4 mt-auto">
-                  {project.demo !== "#" && (
+                  {project.demo && project.demo !== "#" && (
                     <Link
                       href={project.demo}
                       target="_blank"
@@ -82,15 +90,17 @@ export const Projects = () => {
                       Live Demo
                     </Link>
                   )}
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex h-9 w-full items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
-                  >
-                    <Cpu size={16} className="mr-2" />
-                    Code
-                  </Link>
+                  {project.github && project.github !== "#" && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex h-9 w-full items-center justify-center rounded-md border border-input bg-background px-3 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                    >
+                      <Cpu size={16} className="mr-2" />
+                      Code
+                    </Link>
+                  )}
                 </CardFooter>
               </Card>
             </motion.div>
