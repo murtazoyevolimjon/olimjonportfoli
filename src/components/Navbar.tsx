@@ -31,20 +31,6 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  if (!mounted) {
-    return (
-      <nav className="fixed top-0 z-50 w-full py-4 transition-all duration-300 bg-transparent">
-        <div className="container mx-auto px-6 md:px-12">
-          <div className="flex items-center justify-between">
-            <div className="text-base font-bold tracking-tighter">
-              <span className="text-gradient">OLIMJON MURTAZOYEV</span>
-            </div>
-          </div>
-        </div>
-      </nav>
-    );
-  }
-
   return (
     <nav
       className={cn(
@@ -69,24 +55,32 @@ export const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-full p-2 transition-colors hover:bg-accent"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            {mounted ? (
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="rounded-full p-2 transition-colors hover:bg-accent"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+            ) : (
+              <div className="h-9 w-9" />
+            )}
           </div>
 
           {/* Mobile Toggle */}
           <div className="flex items-center space-x-4 md:hidden">
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-full p-2 transition-colors hover:bg-accent"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
+            {mounted ? (
+              <button
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                className="rounded-full p-2 transition-colors hover:bg-accent"
+                aria-label="Toggle theme"
+              >
+                {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              </button>
+            ) : (
+              <div className="h-9 w-9" />
+            )}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 transition-colors hover:bg-accent"

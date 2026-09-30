@@ -1,10 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { HeroScene } from "@/components/HeroScene";
+
+const HeroScene = dynamic(
+  () => import("@/components/HeroScene").then((mod) => mod.HeroScene),
+  { ssr: false }
+);
 
 const titles = [
   "Full-Stack Developer",

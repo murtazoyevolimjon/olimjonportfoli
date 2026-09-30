@@ -1,9 +1,31 @@
 "use client";
 
-import { useRef, useMemo } from "react";
+import React, { useRef, useMemo, useState, useEffect, Component, type ReactNode } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 import * as THREE from "three";
+
+class SceneErrorBoundary extends Component<{ children: ReactNode; fallback: ReactNode }, { hasError: boolean }> {
+  constructor(props: { children: ReactNode; fallback: ReactNode }) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  override componentDidCatch(error: Error) {
+    console.warn("HeroScene WebGL error caught gracefully:", error.message);
+  }
+
+  override render() {
+    if (this.state.hasError) {
+      return this.props.fallback;
+    }
+    return this.props.children;
+  }
+}
 
 function Stars() {
   const ref = useRef<THREE.Points>(null!);
@@ -46,12 +68,37 @@ function Stars() {
 }
 
 export const HeroScene = () => {
+  const [hasWebGL, setHasWebGL] = useState(false);
+
+  useEffect(() => {
+    try {
+      const canvas = document.createElement("canvas");
+      const gl = canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+      setHasWebGL(Boolean(gl));
+    } catch {
+      setHasWebGL(false);
+    }
+  }, []);
+
+  const fallback = (
+    <div className="absolute inset-0 -z-10 h-full w-full overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-blue-900/20 via-background to-background" />
+      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-primary/10 blur-[120px]" />
+    </div>
+  );
+
   return (
     <div className="absolute inset-0 -z-10 h-full w-full">
-      <Canvas camera={{ position: [0, 0, 1] }}>
-        <Stars />
-      </Canvas>
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background" />
+      {hasWebGL ? (
+        <SceneErrorBoundary fallback={fallback}>
+          <Canvas camera={{ position: [0, 0, 1] }} gl={{ alpha: true, antialias: false, powerPreference: "low-power" }}>
+            <Stars />
+          </Canvas>
+        </SceneErrorBoundary>
+      ) : (
+        fallback
+      )}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background pointer-events-none" />
     </div>
   );
 };
