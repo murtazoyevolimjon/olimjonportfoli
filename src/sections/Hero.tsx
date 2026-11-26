@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, ChevronDown, FileText } from "lucide-react";
@@ -12,40 +12,9 @@ const HeroScene = dynamic(
   { ssr: false }
 );
 
-const titles = [
-  "Full-Stack Developer",
-  "Node.js & React Developer",
-  "Next.js Developer",
-  "Creator of EduCRM",
-  "Frontend Instructor",
-];
-
 export const Hero = () => {
   const [cvOpen, setCvOpen] = useState(false);
   const closeCv = useCallback(() => setCvOpen(false), []);
-  const [titleIndex, setTitleIndex] = useState(0);
-  const [displayText, setDisplayText] = useState("");
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const currentTitle = titles[titleIndex];
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setDisplayText(currentTitle.substring(0, displayText.length + 1));
-        if (displayText.length === currentTitle.length) {
-          setTimeout(() => setIsDeleting(true), 2000);
-        }
-      } else {
-        setDisplayText(currentTitle.substring(0, displayText.length - 1));
-        if (displayText.length === 0) {
-          setIsDeleting(false);
-          setTitleIndex((prev) => (prev + 1) % titles.length);
-        }
-      }
-    }, isDeleting ? 50 : 150);
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, titleIndex]);
 
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20">
@@ -66,16 +35,9 @@ export const Hero = () => {
             Hi, I&apos;m <span className="text-gradient">Olimjon</span>
           </h1>
 
-          {/* translate="no": Google Translate matn tugunlarini almashtiradi va
-              React o'chirmoqchi bo'lganda sahifa qulaydi. Matn alohida span ichida
-              bo'lishi ham shu xatodan himoya qiladi. */}
-          <div
-            translate="no"
-            className="notranslate h-12 text-2xl font-semibold text-muted-foreground sm:text-3xl md:text-4xl"
-          >
-            <span>{displayText}</span>
-            <span className="animate-pulse text-primary">|</span>
-          </div>
+          <p className="text-2xl font-semibold text-muted-foreground sm:text-3xl md:text-4xl">
+            Full-Stack Developer
+          </p>
 
           <p className="mx-auto max-w-[800px] text-lg text-muted-foreground md:text-xl">
             Full-Stack developer (Node.js, React / Next.js, PostgreSQL) building education-sector
