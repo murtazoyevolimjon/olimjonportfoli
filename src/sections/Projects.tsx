@@ -12,7 +12,7 @@ const projects = [
     role: "Creator & Full-Stack Developer · 2026",
     description:
       "Live web platform for learning centers, now managing 450+ students and 20+ teachers. Admin and teacher panels, attendance with automatic Telegram notices to parents, debt tracking and cashbox reports exported to Excel / PDF.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    image: "/projects/educrm.jpg",
     tech: ["Node.js", "React / Next.js", "PostgreSQL"],
     demo: "https://educrm.dev",
     github: "#",
@@ -22,7 +22,7 @@ const projects = [
     role: "Frontend Developer, team of 2 · 2026",
     description:
       "Directory of Uzbekistan's higher education institutions: 124 universities across all 14 regions, with a score-based finder that shows grant and contract options.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+    image: "/projects/studynext.jpg",
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     demo: "https://studynext.uz",
     github: "#",
@@ -32,7 +32,7 @@ const projects = [
     role: "Backend Developer · 2025",
     description:
       "Backend of a modular CRM for an education center: Students, Courses, Payments and Lessons / Attendance modules that work independently and link where needed.",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    image: "/projects/crm.jpg",
     tech: ["Node.js", "Express.js", "PostgreSQL", "Knex.js", "JWT"],
     demo: "https://crm-frontend-beta-inky.vercel.app/login",
     github: "https://github.com/murtazoyevolimjon/crm-frontend.git",
@@ -66,7 +66,7 @@ export const Projects = () => {
                     alt={project.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
                 </div>
