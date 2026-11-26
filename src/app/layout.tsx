@@ -8,8 +8,8 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Olimjon Murtazoyev | Full-Stack Developer",
-  description: "Portfolio of Olimjon Murtazoyev, a passionate Node.js & React.js Full-Stack Developer experienced in building scalable applications, CRM systems, and LMS platforms.",
-  keywords: ["Olimjon Murtazoyev", "Full-Stack Developer", "Node.js", "React.js", "PostgreSQL", "Portfolio"],
+  description: "Portfolio of Olimjon Murtazoyev, a Full-Stack Developer (Node.js, React / Next.js, PostgreSQL) building education-sector products: EduCRM and StudyNext.",
+  keywords: ["Olimjon Murtazoyev", "Full-Stack Developer", "Node.js", "React", "Next.js", "PostgreSQL", "EduCRM", "StudyNext", "Portfolio"],
 };
 
 export default function RootLayout({

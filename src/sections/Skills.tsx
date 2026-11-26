@@ -7,19 +7,19 @@ import { Card, CardContent } from "@/components/ui/Card";
 const skillCategories = [
   {
     title: "Backend",
-    skills: ["Node.js", "Express.js", "GraphQL", "REST API", "Socket.io", "Passport.js", "RabbitMQ", "Microservices"],
+    skills: ["Node.js", "Express", "REST", "GraphQL", "Socket.io", "JWT / Passport", "RabbitMQ"],
   },
   {
     title: "Frontend",
-    skills: ["React.js", "HTML5", "CSS3", "Tailwind CSS", "JavaScript", "TypeScript"],
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "HTML / CSS"],
   },
   {
-    title: "Databases",
-    skills: ["PostgreSQL", "MongoDB", "MySQL", "Redis"],
+    title: "Databases & ORMs",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "SQL", "Prisma", "Knex.js", "Sequelize", "Mongoose"],
   },
   {
-    title: "ORMs & Tools",
-    skills: ["Prisma ORM", "Sequelize ORM", "Knex.js", "Mongoose ODM", "Git & GitHub", "Docker", "AWS Cloud", "CI/CD", "Jest", "E2E Testing"],
+    title: "Tools",
+    skills: ["Git / GitHub", "Docker", "CI/CD", "AWS", "Jest"],
   },
 ];
 

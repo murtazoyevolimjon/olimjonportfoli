@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/Card";
 
 const languages = [
   { name: "Uzbek", level: "Native", percentage: 100 },
-  { name: "English", level: "Upper-Intermediate", percentage: 80 },
+  { name: "English", level: "B1 · Intermediate", percentage: 60 },
   { name: "Russian", level: "Basic", percentage: 40 },
 ];
 

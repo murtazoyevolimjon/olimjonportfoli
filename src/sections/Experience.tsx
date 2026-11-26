@@ -3,38 +3,20 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/Card";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { Briefcase, Calendar } from "lucide-react";
 
 const experiences = [
   {
-    title: "Full-Stack Developer",
-    company: "LMS",
-    location: "Tashkent, Uzbekistan",
-    period: "Recent",
-    description: "Built a scalable Learning Management System (LMS) platform where students can access online courses, track learning progress, and purchase educational content.",
+    title: "Frontend Developer",
+    company: "IT Center, training center",
+    period: "Jun 2026 – Present",
+    description:
+      "Teach an 8-month Frontend course (HTML/CSS, JavaScript, TypeScript, Git, React, Next.js) to ~20 students aged 15+.",
     responsibilities: [
-      "Built frontend and backend modules",
-      "Implemented authentication with JWT",
-      "Worked with PostgreSQL and Prisma ORM",
-      "Developed responsive UI using React.js",
-      "Designed scalable backend architecture",
+      "Designed the full curriculum and teaching materials (slides, code examples, exercises, exams)",
+      "Students finish with a deployed portfolio project on Vercel",
     ],
-    tech: ["Node.js", "React.js", "PostgreSQL", "Prisma ORM", "JWT"],
-  },
-  {
-    title: "Backend Developer",
-    company: "CRM System",
-    location: "Tashkent, Uzbekistan",
-    period: "Previous",
-    description: "Developed backend architecture for a CRM system used by educational institutions and training centers.",
-    responsibilities: [
-      "Created modular CRM backend architecture",
-      "Managed students, payments, lessons, and attendance modules",
-      "Built REST APIs using Express.js",
-      "Worked with PostgreSQL and Knex.js",
-      "Implemented JWT authorization",
-    ],
-    tech: ["Node.js", "Express.js", "PostgreSQL", "Knex.js", "JWT"],
+    tech: ["HTML/CSS", "JavaScript", "TypeScript", "Git", "React", "Next.js"],
   },
 ];
 
@@ -44,7 +26,7 @@ export const Experience = () => {
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading
           title="Work Experience"
-          subtitle="A history of building impactful systems and scalable architectures."
+          subtitle="Where I work and what I do there."
         />
 
         <div className="relative mx-auto max-w-4xl space-y-12">
@@ -78,9 +60,6 @@ export const Experience = () => {
                     <CardDescription className="flex items-center text-sm">
                       <Briefcase size={14} className="mr-1" />
                       {exp.company}
-                      <span className="mx-2">•</span>
-                      <MapPin size={14} className="mr-1" />
-                      {exp.location}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="space-y-4">

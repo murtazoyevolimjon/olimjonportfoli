@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Send, Mail, Phone, Globe, MapPin, ArrowUpRight, type LucideIcon } from "lucide-react";
+import { Send, Mail, Phone, Globe, ArrowUpRight, type LucideIcon } from "lucide-react";
 
 type ContactLink = {
   label: string;
@@ -62,9 +62,6 @@ export const Contact = () => {
           >
             I&apos;m currently looking for new opportunities and my inbox is always open.
             Whether you have a question or just want to say hi, I&apos;ll get back to you as soon as I can.
-            <span className="mt-3 flex items-center justify-center gap-1.5 text-sm">
-              <MapPin size={16} className="text-primary" /> Tashkent, Uzbekistan
-            </span>
           </motion.p>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

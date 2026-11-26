@@ -3,13 +3,13 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card, CardContent } from "@/components/ui/Card";
-import { Code2, Database, Layout, Server } from "lucide-react";
+import { Code2, Database, GraduationCap, ShieldCheck } from "lucide-react";
 
 const stats = [
   { label: "Full-Stack Development", icon: Code2, color: "text-blue-500" },
-  { label: "Microservices Architecture", icon: Server, color: "text-purple-500" },
-  { label: "REST & GraphQL APIs", icon: Layout, color: "text-cyan-500" },
-  { label: "Database Design", icon: Database, color: "text-indigo-500" },
+  { label: "REST APIs & Role-Based Access", icon: ShieldCheck, color: "text-purple-500" },
+  { label: "PostgreSQL & Database Design", icon: Database, color: "text-cyan-500" },
+  { label: "Teaching Frontend", icon: GraduationCap, color: "text-indigo-500" },
 ];
 
 export const About = () => {
@@ -18,7 +18,7 @@ export const About = () => {
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading
           title="About Me"
-          subtitle="I build scalable, efficient, and user-centric web applications."
+          subtitle="I build real products for the education sector."
         />
 
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
@@ -29,16 +29,17 @@ export const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold">Passionate about Architecture & Scalability</h3>
+            <h3 className="text-2xl font-bold">Products that people use every day</h3>
             <p className="text-lg text-muted-foreground">
-              I am a passionate Full-Stack Developer focused on building scalable and interactive web applications.
-              I have experience working with modern backend and frontend technologies including
-              Node.js, React.js, PostgreSQL, Prisma ORM, Express.js, and Docker.
+              I&apos;m a Full-Stack developer working with Node.js, React / Next.js and PostgreSQL.
+              I created EduCRM, a live platform that learning centers use to manage 450+ students
+              and 20+ teachers, and built the Next.js interface of StudyNext, a directory of
+              124 universities across Uzbekistan, in a team of two.
             </p>
             <p className="text-lg text-muted-foreground">
-              I enjoy solving real-world problems, learning from experienced developers,
-              and improving my architecture and system design skills. My goal is to create
-              impactful solutions that are both high-performing and maintainable.
+              I also teach an 8-month Frontend course at IT Center, where I designed the full
+              curriculum and help students ship their own deployed projects. I&apos;m comfortable
+              with REST APIs, role-based access and relational database design.
             </p>
           </motion.div>
 

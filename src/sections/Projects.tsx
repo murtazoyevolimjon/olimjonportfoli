@@ -6,31 +6,36 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { ExternalLink, Cpu } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-//ii0ii ijoi oijoin 
 const projects = [
   {
-    title: "StudyNext Platform",
-    description: "Educational portal for searching Uzbek universities, fields of study, and score requirements.",
-    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
-    tech: ["Next.js", "React.js", "TypeScript", "Tailwind CSS"],
-    demo: "https://study-next-smoky-six.vercel.app/",
+    title: "EduCRM",
+    role: "Creator & Full-Stack Developer · 2026",
+    description:
+      "Live web platform for learning centers, now managing 450+ students and 20+ teachers. Admin and teacher panels, attendance with automatic Telegram notices to parents, debt tracking and cashbox reports exported to Excel / PDF.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    tech: ["Node.js", "React / Next.js", "PostgreSQL"],
+    demo: "https://educrm.dev",
     github: "#",
   },
   {
-    title: "Educational CRM System",
-    description: "CRM platform for managing students, payments, attendance, and courses.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    tech: ["Express.js", "PostgreSQL", "Knex.js", "JWT"],
-    demo: "https://crm-frontend-beta-inky.vercel.app/login",
-    github: "https://github.com/murtazoyevolimjon/crm-frontend.git",
+    title: "StudyNext",
+    role: "Frontend Developer, team of 2 · 2026",
+    description:
+      "Directory of Uzbekistan's higher education institutions: 124 universities across all 14 regions, with a score-based finder that shows grant and contract options.",
+    image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&q=80",
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    demo: "https://studynext.uz",
+    github: "#",
   },
   {
-    title: "LMS Platform",
-    description: "Online education platform with course management and student progress tracking.",
+    title: "Training-center CRM",
+    role: "Backend Developer · 2025",
+    description:
+      "Backend of a modular CRM for an education center: Students, Courses, Payments and Lessons / Attendance modules that work independently and link where needed.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
-    tech: ["Node.js", "React.js", "PostgreSQL", "Prisma ORM"],
-    demo: "#",
-    github: "https://github.com/murtazoyevolimjon/LMS",
+    tech: ["Node.js", "Express.js", "PostgreSQL", "Knex.js", "JWT"],
+    demo: "https://crm-frontend-beta-inky.vercel.app/login",
+    github: "https://github.com/murtazoyevolimjon/crm-frontend.git",
   },
 ];
 
@@ -40,7 +45,7 @@ export const Projects = () => {
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading
           title="Featured Projects"
-          subtitle="A showcase of my recent work in building complex systems and user-friendly interfaces."
+          subtitle="Live products I have built for learning centers and university applicants."
         />
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -67,6 +72,7 @@ export const Projects = () => {
                 </div>
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
+                  <p className="text-sm font-medium text-primary">{project.role}</p>
                   <CardDescription>{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow">

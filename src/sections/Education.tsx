@@ -3,22 +3,20 @@
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/Card";
-import { GraduationCap, Calendar, MapPin } from "lucide-react";
+import { GraduationCap, Calendar } from "lucide-react";
 
 const education = [
   {
-    school: "Najot Ta’lim",
-    location: "Tashkent, Uzbekistan",
-    period: "April 2025 – Present",
-    degree: "Foundation of Programming and Full Stack Bootcamp",
-    description: "Intensive training on full-stack development, covering core programming principles and modern web technologies.",
+    school: "Sharof Rashidov Samarkand State University",
+    period: "2023 – 2028 (expected)",
+    degree: "B.Sc. Computer Engineering",
+    description: "Extramural format (5-year program), studying alongside work.",
   },
   {
-    school: "Tashkent University of Information Technologies",
-    location: "Tashkent, Uzbekistan",
-    period: "Ongoing",
-    degree: "Bachelor of Science (B.Sc.) in Software Engineering",
-    description: "Currently studying Software Engineering in correspondence format, focusing on software design and development.",
+    school: "Najot Ta'lim",
+    period: "Sep 2025 – Apr 2026",
+    degree: "Bootcamp: Full Stack — Node.js + React.js",
+    description: "Foundation + Result programs, completed with a certificate.",
   },
 ];
 
@@ -52,9 +50,6 @@ export const Education = () => {
                   <CardDescription className="flex items-center text-sm">
                     <GraduationCap size={14} className="mr-1" />
                     {edu.degree}
-                    <span className="mx-2">•</span>
-                    <MapPin size={14} className="mr-1" />
-                    {edu.location}
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
