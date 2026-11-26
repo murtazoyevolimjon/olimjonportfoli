@@ -136,12 +136,14 @@ export const Contact = () => {
                     />
                   </div>
                   <Button type="submit" className="w-full" disabled={isSubmitting || submitted}>
+                    {/* Matnlar span ichida: Google Translate yoqilganda holat
+                        almashganda sahifa qulamasligi uchun */}
                     {isSubmitting ? (
-                      <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Sending...</>
+                      <><Loader2 className="mr-2 h-4 w-4 animate-spin" /><span>Sending...</span></>
                     ) : submitted ? (
-                      "Message Sent!"
+                      <span>Message Sent!</span>
                     ) : (
-                      <><Send className="mr-2 h-4 w-4" /> Send Message</>
+                      <><Send className="mr-2 h-4 w-4" /><span>Send Message</span></>
                     )}
                   </Button>
                 </form>

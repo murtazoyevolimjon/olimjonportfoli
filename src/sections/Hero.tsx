@@ -63,8 +63,14 @@ export const Hero = () => {
             Hi, I&apos;m <span className="text-gradient">Olimjon</span>
           </h1>
 
-          <div className="h-12 text-2xl font-semibold text-muted-foreground sm:text-3xl md:text-4xl">
-            {displayText}
+          {/* translate="no": Google Translate matn tugunlarini almashtiradi va
+              React o'chirmoqchi bo'lganda sahifa qulaydi. Matn alohida span ichida
+              bo'lishi ham shu xatodan himoya qiladi. */}
+          <div
+            translate="no"
+            className="notranslate h-12 text-2xl font-semibold text-muted-foreground sm:text-3xl md:text-4xl"
+          >
+            <span>{displayText}</span>
             <span className="animate-pulse text-primary">|</span>
           </div>
 
